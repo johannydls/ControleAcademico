@@ -1,0 +1,100 @@
+body.site {
+	padding: 20px;
+	background-image: url(../img/background.svg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #e6e9ef;
+	background-position: top;
+}
+
+.container {
+	max-width: 860px !important;
+}
+
+.body .container {
+	background-color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 6px rgba(160,160,160,0.05);
+	-webkit-box-shadow: 0px 0px 6px rgba(160,160,160,0.05);
+	box-shadow: 0px 0px 6px rgba(160,160,160,0.05);
+}
+
+.menu {
+	text-align: center;
+	font-family: arial;
+	font-size: 12px;
+}
+
+.nav li {
+	width: 150px;
+	position: relative;
+	word-wrap: normal;
+}
+
+.nav li a {
+	background: #333;
+	color: #fff;
+	display: block;
+	padding: 10px 8px;
+	text-decoration: none;
+	border-top: 1px solid #069;
+}
+
+.nav li a:hover {
+	background: #636262;
+}
+
+.nav ul {
+	display:none ;
+	position: absolute;
+	left: 0;
+	list-style: none;
+	padding: 0;
+	z-index: 999;
+}
+.nav ul li{
+	width: 150px;
+	float: left;
+}
+
+.nav ul a {
+	text-decoration: none;
+	display: block;
+	width: 150px;
+	padding: 8px 8px;
+	color: #fff;
+	border-bottom: 1px solid #222;
+}
+
+.nav ul a:hover {
+
+}
+
+.imgBanner1,
+.imgBanner2 {
+	width: 5em;
+}
+
+.imgBanner1 {
+	float: left;
+}
+
+.imgBanner2 {
+	float: right;
+}
+
+.banner h1 {
+	user-select: none;
+	padding-bottom: 20px;
+	padding-top: 15px;
+	font-variant: small-caps;
+	cursor: default;
+}
+
+button:hover {
+	cursor: pointer;
+}

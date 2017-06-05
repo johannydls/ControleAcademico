@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head ng-app="appUFCG">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/ngstorage/ngStorage.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/dirPagination/dirPagination.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/script.js"></script>
+
+	<title>Controle Acadêmico UFCG</title>
+	<link rel="icon" href="img/ufcg.png">
+
+</head>
+
+<body ng-controller="ctrlUFCG" class="site">
+
+	<div class="body">
+		
+		<div class="container">
+			
+			<header class="header">
+				<div class="banner text-center">
+					<img src="img/ufcg.png" class="imgBanner1">
+					<img src="img/book.svg" class="imgBanner2">
+					<h1>Controle Acadêmico Online</h1>
+				</div>
+			</header>
+
+		</div>
+		<br>
+		<div class="container">
+			<div class="alert alert-warning">
+				<h5>Aviso</h5>
+				<p>Você não está conectado ao sistema. Utilize o formulário abaixo para se autenticar.</p>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-12">
+					<input type="text" id="matricula" class="form-control" placeholder="Matrícula/Senha">
+				</div>
+				<br><br>
+				<div class="col-12">
+					<input type="password" id="senha" class="form-control" placeholder="Senha">
+				</div>
+			</div>
+
+			<br>
+			<fieldset class="form-group">
+				<div class="col-9">
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="tpAluno"
+								value=1> Aluno
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="tpProfessor"
+								value=2> Professor
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="toCoordenacao"
+								value=3> Coordenação
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="tpUnidade"
+								value=4> Unidade Acadêmica
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="tpBiblioteca"
+								value=5> Biblioteca
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" name="tipoConta" id="tpCentro"
+								value=6> Centro
+						</label>
+					</div>
+
+					
+				</div>
+
+				<div class="col-3">
+					<button type="button" class="btn btn-primary">Entrar</button>
+				</div>
+
+			</fieldset>
+
+			<div class="text-center">
+				<button type="button" class="btn btn-default">Ajuda e Suporte</button>
+			</div>
+		</div>
+		<br>
+		<div class="container">
+				<span>2017 <a href="#">Pró-Reitoria de Ensino/UFCG</a></span>
+				<br>
+				<span>Desenvolvido por Johanny LS</span>
+		</div>
+
+	</div>
+	
+</body>
+
+</html>
