@@ -82,10 +82,17 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 
-app.controller('pageController', ['$scope', 'alunosService', function ($scope, alunosService) {
+app.controller('pageController', ['$scope', 'alunosService', '$location', function ($scope, alunosService, $location) {
 	$scope.logout = function() {
 		alunosService.logout();
 	}
+
+	
+	$scope.getPath = function() {
+		return $location.path();
+	}
+	
+
 }]);
 
 app.controller('loginController', ['$scope','alunosService', function ($scope, alunosService) {

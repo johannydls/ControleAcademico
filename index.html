@@ -105,10 +105,23 @@
 
 		</div>
 		<br>
-		
-		<div ng-view class="container">
+
+		<div class="container">
+
+			<div ng-show="['/cadastro','/historico', '/curriculo', '/horario'].indexOf(getPath()) != -1">
+				<div class="btn-group-sm pull-right" role="group" aria-label="Basic example">
+					<a href="#!/cadastro" class="btn btn-secondary">Cadastro</a>
+					<a href="#!/historico" class="btn btn-secondary">Histórico</a>
+					<a href="#!/curriculo" class="btn btn-secondary">Currículo</a>
+					<a href="#!/horario" class="btn btn-secondary">Horário</a>
+				</div>
+			</div>
 			
+			<div ng-view>
+
+			</div>
 		</div>
+			
 
 		<br>
 		<div class="container">
