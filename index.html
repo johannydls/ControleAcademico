@@ -41,8 +41,9 @@
 					<img src="img/book.svg" class="imgBanner2">
 					<h1>Controle Acadêmico Online</h1>
 				</div>
-				<br>
-				<div class="header1">
+				
+				<div class="header1" ng-show="$root.usuarioLogado != null">
+
 			        <div class="nav1" id="menu">
 			            
 			            <div class="logo"><a href="index.html"></a></div>
@@ -71,7 +72,7 @@
 			                    <a href="javascript:void(0)">Matrículas</a>
 			                    
 			                    <ul>
-			                        <li><a href="#!/disciplinasOfertadas">Turmas ofertadas</a></li>
+			                        <li><a href="#!/turmasOfertadas">Turmas ofertadas</a></li>
 			                        <li><a href="#!/matricularDisciplina">Matricular</a></li>
 			                        <li><a href="#!/calendarioCampus">Calendário do campus</a></li>
 			                        <li><a href="#!/calendarioCurso">Calendário do curso</a></li>
@@ -95,7 +96,7 @@
 			                        <li><a href="#!/ajuda">Ajuda</a></li>
 			                    </ul>
 			                </li>
-			                <li><a href="javascript:void(0)">Sair</a></li>
+			                <li><a href="javascript:void(0)" ng-click="logout()">Sair</a></li>
 			            </ul>
 			        </div>
 			    </div>

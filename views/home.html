@@ -1,1 +1,49 @@
-<h1>Home</h1>
+<div class="alert alert-info">
+
+	<ul style="padding-left: 15px">
+		<li>Verifique a situação de seu vínculo acadêmico.</li>
+		<li>Conheça o novo Histórico Acadêmico.</li>
+		<li>Apenas o Controle Acadêmico está autorizado à informar a situação de matrícula do aluno.</li>
+		<li>As notas das disciplinas são definitivas apenas após consolidação do Histórico Acadêmico.</li>
+	</ul>
+
+</div>
+
+<div>
+
+	<table class="table table-condensed">
+		<thead>
+			<tr></tr>
+			<tr></tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td><b>Usuário:</b></td>
+				<td>{{$root.usuarioLogado.matricula}} - {{$root.usuarioLogado.nome}}</td>
+			</tr>
+
+			<tr>
+				<td><b>Curso:</b></td>
+				<td>{{$root.usuarioLogado.curso}}</td>
+			</tr>
+
+			<tr>
+				<td><b>Campus:</b></td>
+				<td>1 - Campina Grande</td>
+			</tr>
+
+			<tr>
+				<td><b>Situação de Acesso:</b></td>
+				<td>Você está acessando o sistema <b>fora do calendário de matrícula</b> do seu Campus e só terá acesso a operações de consulta.</td>
+			</tr>
+
+			<tr>
+				<td><b>Observação:</b></td>
+				<td>Por motivos de segurança, seu IP ({{ip}}) e todas as operações realizadas serão registradas.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</div>

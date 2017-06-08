@@ -36,8 +36,8 @@ app.config(function ($routeProvider, $locationProvider) {
 			templateUrl: 'views/info/turmas-em-curso.html',
 			controller: 'turmasEmCursoController'
 		})
-		.when('/disciplinasOfertadas', {
-			templateUrl: 'views/matricula/disciplinas-ofertadas.html',
+		.when('/turmasOfertadas', {
+			templateUrl: 'views/matricula/turmas-ofertadas.html',
 			controller: 'turmasOfertadasController'
 		})
 		.when('/matricularDisciplina', {
@@ -77,21 +77,44 @@ app.config(function ($routeProvider, $locationProvider) {
 			controller: 'acessoNegadoController'
 		})
 		.otherwise({ 
-			redirectTo: '/home'
+			redirectTo: '/login'
 		});
 });
 
-app.controller('pageController', function ($scope) {
+
+app.controller('pageController', ['$scope', 'alunosService', function ($scope, alunosService) {
+	$scope.logout = function() {
+		alunosService.logout();
+	}
+}]);
+
+app.controller('loginController', ['$scope','alunosService', function ($scope, alunosService) {
+	$scope.logar = function(user) {
+
+		if (user.matricula != null && user.senha != null) {
+
+			alunosService.validaLogin(user);
+			
+			if (alunosService.validaLogin(user)) {
+				$scope.logado = 1;
+			} else {
+				$scope.logado = 0;
+			}
+		} else {
+			alert("Erro");
+		}
+		
+	}
+}]);
+
+app.controller('homeController', ['$scope','$http', function ($scope, $http) {
 	
-});
+	var url = "http://freegeoip.net/json/";
 
-app.controller('loginController', function ($scope) {
-
-});
-
-app.controller('homeController', function ($scope) {
-
-});
+  	$http.get(url).then(function(response) {
+    	$scope.ip = response.data.ip;
+  	});
+}]);
 
 app.controller('cadastroController', function ($scope) {
 
@@ -157,9 +180,59 @@ app.controller('acessoNegadoController', function ($scope) {
 
 });
 
-app.service('usuariosService', function ($rootScope, $location, $localStorage, $http) {
+app.service('alunosService', function ($rootScope, $location, $http, $localStorage) {
 	
+	$rootScope.alunos = [];
+
+	$http.get('data/alunos.json')
+		.then(function(response) {
+			$rootScope.alunos = response.data.alunos;
+		});
+
 	this.validaLogin = function(user) {
 		
+		$localStorage.usuarioLogado = null;
+
+		angular.forEach($rootScope.alunos, function(value, index) {
+			if(value.matricula == user.matricula &&
+				value.senha == user.senha) {
+				$rootScope.usuarioLogado = value;
+				$location.path('/home');
+			}
+		});
+
+		$localStorage.usuarioLogado = $rootScope.usuarioLogado;
 	}
+
+	this.logout = function() {
+		$rootScope.usuarioLogado = null;
+		$localStorage.usuarioLogado = null;
+		$location.path('/login');
+	}
+
+	this.getAlunos = function() {
+		return $rootScope.alunos;
+	}
+});
+
+app.run(function ($rootScope, $location, $localStorage) {
+
+	$rootScope.usuarioLogado = $localStorage.usuarioLogado;
+
+	var rotasBloqueadasAlunosNaoLogados = [
+		'/home', '/cadastro', '/historico', '/curriculo',
+		'/turmas', '/turmasOfertadas', '/matricularDisciplina',
+		'/calendarioCampus', '/calendarioCurso', '/estagios',
+		'/trancamento', '/desvinculo', '/alterarSenha'];
+	
+	var rotasBloqueadasAlunosLogados = [];
+
+	$rootScope.$on('$locationChangeStart', function() {
+
+		if ($rootScope.usuarioLogado == null &&
+			rotasBloqueadasAlunosNaoLogados.indexOf($location.path()) != -1) {
+
+			$location.path('/login');
+		} 
+	});
 });

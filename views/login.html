@@ -1,16 +1,21 @@
 
-<div class="alert alert-warning">
+<div class="alert alert-warning" ng-show="logado != 0">
 	<h5>Aviso</h5>
 	<p>Você não está conectado ao sistema. Utilize o formulário abaixo para se autenticar.</p>
 </div>
 
+<div class="alert alert-danger" ng-show="logado == 0">
+	<h5>Erro</h5>
+	<p>Matrícula inválida ou a senha está incorreta!</p>
+</div>
+
 <div class="form-group row">
 	<div class="col-12">
-		<input type="text" id="matricula" class="form-control" placeholder="Matrícula/Senha">
+		<input type="text" ng-model="user.matricula" id="matricula" class="form-control" placeholder="Matrícula/Senha">
 	</div>
 	<br><br>
 	<div class="col-12">
-		<input type="password" id="senha" class="form-control" placeholder="Senha">
+		<input type="password" ng-model="user.senha" id="senha" class="form-control" placeholder="Senha">
 	</div>
 </div>
 
@@ -64,7 +69,7 @@
 	</div>
 
 	<div class="col-3">
-		<button type="button" class="btn btn-primary">Entrar</button>
+		<button type="button" ng-click="logar(user)" class="btn btn-primary">Entrar</button>
 	</div>
 
 </fieldset>
