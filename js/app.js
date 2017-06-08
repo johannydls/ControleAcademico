@@ -157,6 +157,9 @@ app.controller('acessoNegadoController', function ($scope) {
 
 });
 
-app.service('usuariosService', function ($rootScope, $location, $localStorage) {
+app.service('usuariosService', function ($rootScope, $location, $localStorage, $http) {
 	
+	this.validaLogin = function(user) {
+		
+	}
 });
