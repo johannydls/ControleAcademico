@@ -1,3 +1,9 @@
+* {
+	margin:0;
+    padding:0;
+    text-decoration:none;
+}
+
 body.site {
 	padding: 20px;
 	background-image: url(../img/vortex.svg);
@@ -5,6 +11,13 @@ body.site {
 	background-size: cover;
 	background-color: #e6e9ef;
 	background-position: top;
+}
+
+@media(max-width: 1000px) {
+	body.site {
+		background-image: url();
+		background-color: #218ac2;
+	}
 }
 
 .container {
