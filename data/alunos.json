@@ -1,0 +1,81 @@
+{
+	"alunos":[
+		{
+			"matricula": "113210001",
+			"nome": "Aluno 1",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210002",
+			"nome": "Aluno 2",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210003",
+			"nome": "Aluno 3",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210004",
+			"nome": "Aluno 4",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210005",
+			"nome": "Aluno 5",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210006",
+			"nome": "Aluno 6",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210007",
+			"nome": "Aluno 7",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210008",
+			"nome": "Aluno 8",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210009",
+			"nome": "Aluno 9",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210010",
+			"nome": "Aluno 10",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		},
+		{
+			"matricula": "113210011",
+			"nome": "Aluno 11",
+			"senha": "123",
+			"tipo": "1",
+			"admin": false
+		}
+	]
+}
